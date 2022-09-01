@@ -20,9 +20,15 @@
         })
 
         socket.emit('mensaje', { nombre: 'Andres' })
-        socket.on('mensaje', (payload)=>{
+
+        socket.on('nuevo-mensaje', (payload)=>{
             console.log('escuchando:', payload)
-        })
+        });
+
+        socket.on('active-bands', (payload) => {
+            console.clear();
+            console.table(payload);
+        });
 
     </script>
 </body>
